@@ -25,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
+
+
         $count = DB::select('select count(*) as total from users');
         return view('home', ['count' => $count[0]->total]);
     }

@@ -19,7 +19,7 @@ class CreateOperatorsTable extends Migration
             $table->string('operator_email');
             $table->string('operator_phone');
             $table->string('operator_address');
-            $table->boolean('operator_status')->default(1);
+            $table->boolean('operator_status')->default(0);
             $table->timestamps();
         });
     }

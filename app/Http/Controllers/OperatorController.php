@@ -14,7 +14,13 @@ class OperatorController extends Controller
      */
     public function index()
     {
-        //
+        // $usera = User::find($id);
+        
+        
+        return view('operators.index', [
+            'operators' => Operator::all()
+            
+        ]);
     }
 
     /**
@@ -22,9 +28,9 @@ class OperatorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('operators.create');
     }
 
     /**
@@ -35,7 +41,14 @@ class OperatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $operators = new Operator;
+        $operators->operator_name = $request->operator_name;
+        $operators->operator_email = $request->operator_email;
+        $operators->operator_phone = $request->operator_phone;
+        $operators->operator_address = $request->operator_address;
+        $operators->operator_status = $request->operator_status;
+        $operators->save();
+        return redirect()->route('operators.index')->with('success', 'Added Successfully');
     }
 
     /**

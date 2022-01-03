@@ -16,6 +16,10 @@
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
     <link rel="stylesheet" href="{{ asset('js/select.dataTables.min.css') }}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
@@ -47,7 +51,7 @@
             <div class="navbar-menu-wrapper d-flex align-items-top">
                 <ul class="navbar-nav">
                     <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                        <h1 class="welcome-text">Good Morning, <span
+                        <h1 class="welcome-text">Hello, <span
                                 class="text-black fw-bold">{{ Auth::user()->name }}</span></h1>
                     </li>
                 </ul>
@@ -101,8 +105,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
-                            aria-controls="ui-basic">
+                        <a class="nav-link" href="{{ route('operators.index') }}" method="post">
                             <i class="menu-icon mdi mdi-account"></i>
                             <span class="menu-title">Operators</span>
                             <i class="menu-arrow"></i>
@@ -143,7 +146,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('reports.index') }}" method="post">
                             <i class="menu-icon mdi mdi-file-document"></i>
                             <span class="menu-title">Reports</span>
                             <i class="menu-arrow"></i>
@@ -163,11 +166,11 @@
                             <span class="menu-title">Logout</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <form  action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <form action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                     </li>
-                </ul>   
+                </ul>
             </nav>
             @yield('content')
             <!-- partial -->
@@ -178,7 +181,8 @@
     </div>
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021 Raju  Dahal. All rights
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021 Raju Dahal. All
+                rights
                 reserved.</span>
         </div>
     </footer>

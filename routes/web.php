@@ -32,8 +32,16 @@ Route::post('/logout', [App\Http\Controllers\UserController::class, 'logout'])->
 Route::get('/maps', [App\Http\Controllers\MapController::class, 'index'])->name('maps.index');
 
 //for Operator
-Route::get('/operators', [App\Http\Controllers\OperatorController::class, 'index'])->name('operators.index');
+Route::get('/operators/{$id}', [App\Http\Controllers\OperatorController::class, 'index'])->name('operators.index');
+Route::get('/operators/add', [App\Http\Controllers\OperatorController::class, 'create'])->name('operators.add');
+Route::post('/operators/save', [App\Http\Controllers\OperatorController::class, 'store'])->name('operators.store');
 
 //for Bus
 Route::get('/buses', [App\Http\Controllers\BusController::class, 'index'])->name('buses.index');
 // Route::get('/buses/add', [App\Http\Controllers\BusController::class, 'create'])->name('buses.add');
+
+
+
+
+//for Reports section
+Route::get('/reports', [App\Http\Controllers\ReportController::class, 'index'])->name('reports.index');

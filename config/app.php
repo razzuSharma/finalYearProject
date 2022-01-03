@@ -14,6 +14,10 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'providers' => [
+        // Other Service Providers...
+        App\Providers\ComposerServiceProvider::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------

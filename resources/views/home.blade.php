@@ -40,11 +40,11 @@
             <div class="col-3">
                 <div class="card bg-white">
                     <div class="card-header text-center" style="background-color:#d7d8da">
-                        <h3 class="fw-bold">Reports</h3>
-                        <i class="menu-icon mdi mdi-file-document"></i>
+                        <h3 class="fw-bold">Operators</h3>
+                        <i class="menu-icon mdi mdi-account-circle-outline"></i>
                     </div>
                     <div class="card-body">
-                        <p class="text-center">This is the body</p>
+                        <p class="text-center text-bold">OKAY</p>
                     </div>
                 </div>
             </div>
