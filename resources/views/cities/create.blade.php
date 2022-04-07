@@ -16,7 +16,7 @@
                 </div>
                 <div>
                     <label for="">City Code</label>
-                    <input type="number" name="city_code" placeholder="Address" class="form-control @error('address') is-invalid @enderror" required>
+                    <input type="number" name="city_code" placeholder="Code" class="form-control @error('address') is-invalid @enderror" required>
                     @error('address')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

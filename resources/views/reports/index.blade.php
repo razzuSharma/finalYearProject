@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <form method="post" id="frmSubmit" onsubmit="return checkDefault()" name="myForm">
                             <div class="mb-2">
-                                <input type="checkbox" id="accept" class="ml-2 text-center" value="1">stay anonymous?
+                                <input type="checkbox" id="accept" name="check" class="ml-2 text-center" value="1">stay anonymous?
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputName" class="form-label">Name</label>
@@ -56,7 +56,7 @@
 
                         {{-- the code below is for the ajax request --}}
                         <script>
-                            // var c = document.getElementById("accept");
+                            // var c = document.getElementById("check");
                             // if (c.checked = true) {
                             //     document.getElementById("exampleInputName").readOnly = true;
                             // } else {

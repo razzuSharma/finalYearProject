@@ -30,7 +30,7 @@ Route::post('/users/delete/{id}', [App\Http\Controllers\UserController::class, '
 Route::get('/about', [App\Http\Controllers\BusAppController::class, 'index'])->name('about.index');
 
 //for user logout
-Route::post('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
 //for maps
 Route::get('/maps', [App\Http\Controllers\MapController::class, 'index'])->name('maps.index');
@@ -50,6 +50,30 @@ Route::post('/buses/save', [App\Http\Controllers\BusController::class, 'store'])
 Route::get('/cities', [App\Http\Controllers\CityController::class, 'index'])->name('cities.index');
 Route::get('/cities/add', [App\Http\Controllers\CityController::class, 'create'])->name('cities.add');
 Route::post('/cities/save', [App\Http\Controllers\CityController::class, 'store'])->name('cities.store');
+
+
+//forDestination
+Route::get('/destinations', [App\Http\Controllers\DestinationController::class, 'index'])->name('destination.index');
+Route::get('/destinations/add', [App\Http\Controllers\DestinationController::class, 'create'])->name('destination.add');
+Route::post('/destinations/save', [App\Http\Controllers\DestinationController::class, 'store'])->name('destination.store');
+
+
+//for Schedule
+Route::get('/schedules', [App\Http\Controllers\ScheduleController::class, 'index'])->name('schedules.index');
+Route::get('/schedules/add', [App\Http\Controllers\ScheduleController::class, 'create'])->name('schedules.add');
+Route::post('/schedules/save', [App\Http\Controllers\ScheduleController::class, 'store'])->name('schedules.store');
+
+
+// Route::get('/showRegion', ['as' => 'showRegion', 'uses' => 'ScheduleController@showRegion']);
+// Route::get('/showOperator', ['as' => 'showOperator', 'uses' => 'ScheduleController@showOperator']);
+
+
+
+
+
+
+
+
 
 
 

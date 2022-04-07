@@ -105,14 +105,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('buses.index') }}" method="post"
-                            aria-controls="ui-basic">
-                            <i class="menu-icon  mdi  mdi-bus"></i>
-                            <span class="menu-title">Busses</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('operators.index') }}" method="post">
                             {{-- <a class="nav-link" href="#" method="post"> --}}
                             <i class="menu-icon mdi mdi-account"></i>
@@ -120,6 +112,15 @@
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('buses.index') }}" method="post"
+                            aria-controls="ui-basic">
+                            <i class="menu-icon  mdi  mdi-bus"></i>
+                            <span class="menu-title">Busses</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('cities.index') }}" method="post">
                             <i class="menu-icon mdi mdi-card-text-outline"></i>
@@ -132,15 +133,14 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false"
-                            aria-controls="charts">
+                        <a class="nav-link"  href="{{ route('destination.index') }}" method="post">
                             <i class="menu-icon mdi mdi-flag-variant"></i>
                             <span class="menu-title">Destination</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#">
+                        <a class="nav-link"  href="{{ route('schedules.index') }}" method="post">
                             <i class=" menu-icon mdi mdi-routes"></i>
                             <span class="menu-title">Routes</span>
                             <i class="menu-arrow"></i>
@@ -167,7 +167,7 @@
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             <i class="menu-icon mdi mdi-logout"></i>
@@ -177,6 +177,17 @@
                         <form action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+                    </li> --}}
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a class="nav-link" href="{{ route('logout') }}">
+                            <i class="menu-icon mdi mdi-logout"></i>
+                            <span class="menu-title">Logout</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+
                     </li>
                 </ul>
             </nav>

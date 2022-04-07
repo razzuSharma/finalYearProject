@@ -22,7 +22,7 @@
                         <i class=" menu-icon mdi mdi-routes"></i>
                     </div>
                     <div class="card-body">
-                        <p class='text-center'>this is the body</p>
+                        <p class='text-center'>{{ $count }}</p>
                     </div>
                 </div>
             </div>

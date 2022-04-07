@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class DestinationController extends Controller
@@ -14,7 +15,11 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        //
+        $destination = Destination::get();
+        $city = City::get();
+        return view('destination.index', [
+            'destinations' => Destination::all(), 'city' => City::all()
+        ]);
     }
 
     /**
@@ -24,7 +29,11 @@ class DestinationController extends Controller
      */
     public function create()
     {
-        //
+        $city = City::all();
+        $destination = Destination::all();
+        return view('destination.create', [
+            'city'=> $city, 'destination' => $destination
+        ]);
     }
 
     /**
@@ -35,7 +44,14 @@ class DestinationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $destination = new Destination();
+        $destination->destination_name = $request->destination_name;
+        $destination->destination_code = $request->destination_code;
+        $destination->city_id = $request->city_id;
+        $destination->status = $request->status;
+        $destination->save();
+        // return $destination;
+        return redirect()->route('destination.index')->with('success', 'Added Successfully');    
     }
 
     /**
@@ -46,7 +62,7 @@ class DestinationController extends Controller
      */
     public function show(Destination $destination)
     {
-        //
+        
     }
 
     /**

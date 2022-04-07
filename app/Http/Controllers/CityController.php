@@ -28,7 +28,7 @@ class CityController extends Controller
     {
         $city = City::all();
         return view('cities.create', [
-            'city' => $city
+            'cities' => $city
         ]);
     }
 
